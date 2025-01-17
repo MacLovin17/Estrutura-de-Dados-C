@@ -1,16 +1,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct Pilha{
-    int valor;
-    struct Pilha *proximo;
+// Estrutura da pilha
+// Cada nó da pilha contém um valor inteiro e um ponteiro para o próximo nó
+struct Pilha{ 
+    int valor; // Valor armazenad o no nó
+    struct Pilha *proximo; // Ponteiro para o próximo nó
 };
 
 void inserir(struct Pilha ** topo, int new_valor){
-    struct Pilha* novo = malloc(sizeof(struct Pilha));
-    novo->valor = new_valor;
-    novo->proximo = *topo;
-    *topo = novo;
+    struct Pilha* novo = malloc(sizeof(struct Pilha));   // Aloca memória para o novo nó
+    novo->valor = new_valor;  // Armazena o novo valor no nó
+    novo->proximo = *topo;    // Faz o novo nó apontar para o nó atual do topo
+    *topo = novo;             // Atualiza o topo para ser o novo nó
 }
 
 void print(struct Pilha*  p){

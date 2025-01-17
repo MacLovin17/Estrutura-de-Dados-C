@@ -51,7 +51,6 @@ int main(void){
         printf("Removendo %d\n", remover(&f));
         i--;
     }
-    
 
     return 0;
 }
